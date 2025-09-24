@@ -11,7 +11,10 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-
+// Test to see if plugin is running
+add_action('init', function() {
+    error_log("Formidable Extensions plugin is running");
+});
 
 
 if ( ! defined( 'ABSPATH' ) ) exit; // No direct access
