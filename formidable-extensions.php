@@ -31,21 +31,6 @@ add_action( 'wp_enqueue_scripts', function() {
 });
 
 
-// add_filter('frm_setup_new_fields_vars', function($field, $field_obj){
-//     if ($field['type'] === 'date') {
-//         // Attach blackout dates to the field wrapper as a data attribute
-//         if (!empty($field['field_options']['unique_dates'])) {
-//             // unique_dates holds the blackout days set in the UI
-//             $blackouts = $field['field_options']['unique_dates'];
-//             if (is_array($blackouts)) {
-//                 $blackouts = array_map('sanitize_text_field', $blackouts);
-//                 $field['custom_html'] .= '<input type="hidden" class="frm_blackout_dates" value="'. esc_attr(implode(',', $blackouts)) .'">';
-//             }
-//         }
-//     }
-//     return $field;
-// }, 20, 2);
-
 add_filter('frm_setup_new_fields_vars', function($field, $field_obj){
     if ($field['type'] === 'date') {
         // Check if the field has blackout dates set in Formidable
